@@ -1,17 +1,14 @@
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate, useLocation } from "react-router-dom";
-
 import { useState, useEffect } from "react";
 import { makeStyles } from "@mui/styles";
 import { Typography, Fab, IconButton, TextField, CircularProgress, ClickAwayListener, } from "@mui/material";
 import { Text } from "react-native";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import EditRoundedIcon from "@mui/icons-material/EditRounded";
-import ViewColumnRoundedIcon from "@mui/icons-material/ViewColumnRounded";
-import ScatterPlotRoundedIcon from "@mui/icons-material/ScatterPlotRounded";
+import FolderOffIcon from '@mui/icons-material/FolderOff';
+import FolderOpenIcon from '@mui/icons-material/FolderOpen';
 import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
-import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
-
 import Ungrouped from "./Ungrouped";
 import Grouped from "./Grouped";
 import colors from "../assets/colors";
@@ -125,37 +122,6 @@ const Board = () => {
   if (board)
     return (
       <div className={classes.board}>
-        {/* <ClickAwayListener
-          onClickAway={() => {
-            if (edit) setEdit(false);
-          }}
-        >
-          <div className={classes.title}>
-            {edit ? (
-              <TextField
-                id="boardname"
-                type="text"
-                value={board.title}
-                variant="standard"
-                inputProps={{
-                  style: { fontSize: "2em", padding: 0 },
-                }}
-                onChange={(event) => {
-                  setBoard({ ...board, title: event.target.value });
-                }}
-              />
-            ) : (
-              <Typography variant="h4">{board.title}</Typography>
-            )}
-            <IconButton
-              onClick={() => {
-                setEdit(!edit);
-              }}
-            >
-              {!edit ? <EditRoundedIcon /> : <CheckRoundedIcon />}
-            </IconButton>
-          </div>
-        </ClickAwayListener> */}
         <Text style={{fontWeight: 'normal', fontSize: '70px'}}> 
           Idea Management Tool
         </Text>
@@ -168,13 +134,13 @@ const Board = () => {
             style={{ margin: "0px 5px" }}
           >
             {grouped ? (
-              <ViewColumnRoundedIcon color="primary" />
+              <FolderOpenIcon color="black" />
             ) : (
-              <ScatterPlotRoundedIcon color="primary" />
+              <FolderOffIcon color="black" />
             )}
           </Fab>
           <Fab
-            color="primary"
+            color="black"
             onClick={() => {
               setBoard({
                 ...board,
