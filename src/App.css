@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-touch-callout: default;
+}
+
+.menu {
+  font-size: 14px;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 5px;
+  height: auto;
+  margin: 0;
+  /* use absolute positioning  */
+  position: absolute;
+  list-style: none;
+  box-shadow: 0 0 20px 0 #ccc;
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
